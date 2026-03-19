@@ -1,4 +1,4 @@
-# TravelFootprint
+# travelfootprint
 # 旅行足迹地图社交网站
 
 一个基于 Next.js + Leaflet 的旅行足迹地图社交网站，支持用户记录旅行足迹、上传旅行照片和视频、查看好友的旅行地图。
