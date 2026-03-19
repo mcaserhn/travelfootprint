@@ -1,0 +1,223 @@
+/* 导入字体 */
+@import url('https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Catamaran:wght@400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* 全局样式 */
+body {
+  font-family: 'Catamaran', 'OPPOSans', sans-serif;
+  color: #333333;
+  background-color: #FFFFFF;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Figtree', 'OPPOSans', sans-serif;
+}
+
+/* 地图样式修复 */
+.leaflet-container {
+  width: 100%;
+  height: 100vh;
+}
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-rgb: 255, 255, 255;
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: rgb(var(--background-rgb));
+  font-family: 'Inter', system-ui, sans-serif;
+}
+
+/* Leaflet 样式覆盖 */
+.leaflet-container {
+  height: 100vh;
+  width: 100%;
+  z-index: 1;
+}
+
+/* 自定义地图样式 */
+.custom-map {
+  .leaflet-tile {
+    filter: grayscale(0%);
+  }
+}
+
+/* 好友列表样式 */
+.friend-list {
+  position: fixed;
+  right: 0;
+  top: 0;
+  height: 100vh;
+  width: 80px;
+  background: rgba(255, 255, 255, 0.95);
+  box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1);
+  z-index: 10;
+  padding: 1rem 0;
+  overflow-y: auto;
+}
+
+.friend-avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin: 0.5rem auto;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.friend-avatar:hover {
+  transform: scale(1.1);
+}
+
+/* 城市子页面样式 */
+.city-page {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: white;
+  z-index: 20;
+  padding: 2rem;
+  overflow-y: auto;
+}
+
+.back-button {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  z-index: 21;
+}
+
+/* 上传表单样式 */
+.upload-form {
+  margin: 2rem 0;
+}
+
+.upload-input {
+  margin: 1rem 0;
+}
+
+/* 内容列表样式 */
+.content-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1rem;
+  margin: 2rem 0;
+}
+
+.content-item {
+  border: 1px solid #e5e7eb;
+  border-radius: 0.5rem;
+  overflow: hidden;
+}
+
+.content-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.content-video {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+/* 登录页面样式 */
+.login-page {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.login-card {
+  background: white;
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+/* 新登录页面样式 */
+.login-container {
+  background: white;
+  border-radius: 16px;
+  padding: 40px;
+  max-width: 420px;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+  width: 100%;
+}
+
+/* 输入框交互 */
+input:focus {
+  border-color: #667eea;
+  box-shadow: 0 0 0 3px rgba(102,126,234,0.1);
+}
+
+/* 渐变按钮 */
+.login-btn {
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.login-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(102,126,234,0.3);
+}
+
+/* Google 登录按钮 */
+#google-btn {
+  width: 100%;
+}
+
+.wechat-login-btn {
+  background: #07C160;
+  color: white;
+  padding: 1rem 2rem;
+  border-radius: 0.5rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.wechat-login-btn:hover {
+  background: #05a850;
+}
+
+/* 响应式设计 */
+@media (max-width: 480px) {
+  .login-container {
+    padding: 32px 24px;
+  }
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+  .friend-list {
+    width: 60px;
+  }
+  
+  .friend-avatar {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .city-page {
+    padding: 1rem;
+  }
+  
+  .content-list {
+    grid-template-columns: 1fr;
+  }
+}
